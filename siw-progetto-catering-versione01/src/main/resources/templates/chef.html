@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>  	
+		<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dettagli chef</title>
+		<link rel="stylesheet" href="../dettagli.css"/>    
+	</head> 
+
+	<body>
+	<header> 
+		<div id="titolo"><strong class="titolo">Dettagli chef</strong></div>
+	</header>
+	
+	<div class="sezione">
+		<p>
+			<span ><strong>Nome chef: </strong></span>
+			<span th:text="${chef.nome}">Nome generico</span>
+			<span><strong>  -  Cognome chef: </strong></span>
+			<span  th:text="${chef.cognome}">Cognome generico</span>
+			<span><strong>  -  Nazionalità chef: </strong></span>
+			<span  th:text="${chef.nazionalita}">Nazionalita generica</span>
+		</p>
+		<p><a th:href="@{'/chef' + '/' + ${chef.id} + '/' + 
+				'nuovoBuffet'}" href="#">Inserisci nuovo buffet</a>
+		</p>
+		<p><a th:href="@{'/chef' + '/' + ${chef.id} + '/' + 
+				'buffets'}" href="#">Consulta buffet disponibili</a>
+		</p>
+	</div>
+
+	<div class="sezione">
+			<a href="/"><strong class="top">Home</strong></a>
+		</div>
+	</body>
+
+</html>

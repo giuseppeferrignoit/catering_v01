@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cancellazione Chef</title>
+		<link rel="stylesheet" href="../elenchi.css"/>  
+	</head>
+	
+	<body>	
+		<header> 
+			<div id="titolo"><strong class="titolo">CANCELLAZIONE CHEF</strong></div>
+		</header>
+			
+		<div class="sezione">	
+			<h4>Sei sicuro di voler eliminare lo chef
+				<span th:text="${chef.nome}">Nome</span>
+				<span th:text="${chef.cognome}">Cognome</span>
+				<span>e tutti i suoi buffet</span>
+				
+				<ul th:if="${!chef.buffet.empty}">
+					<li th:each="buffet: ${chef.buffet}">
+						<a href="buffet.html" th:href="@{'/buffet' + '/' + ${buffet.id}}"
+				   		th:text="${buffet.nome}">Buffet</a>
+					</li>
+				</ul>
+				
+				<p>
+					<a th:href="@{'/confermaDeleteChef' + '/' + ${chef.id}}">CONFERMA</a>
+					<a th:href="@{'/chefs'}">ANNULLA</a>
+				</p>
+			</h4>
+		</div>
+		
+		<div class="sezione">
+			<a href="/"><strong class="top">Home</strong></a>
+		</div>
+	</body>
+	</body>
+</html>

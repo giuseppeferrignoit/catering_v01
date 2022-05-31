@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>  	
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">    
+	<title>Aggiungi piatti al buffet</title>
+		<link rel="stylesheet" href="/../elenchi.css"/>  
+</head> 
+
+<body>
+	<header> 
+		<div id="titolo"><strong class="titolo"> Dettagli buffet e piatti</strong></div>
+	</header>
+	
+	<div class="sezione">
+	
+		<p>
+			<span >Nome buffet: </span>
+			<span th:text="${buffet.nome}">Buffet generico</span>
+			<span>  -  Descrizione buffet: </span>
+			<span  th:text="${buffet.descrizione}">Descrizione generica</span>
+			<span>  -  Chef buffet: </span>
+			<span th:text="${buffet.chef}">Id chef generico</span>
+		</p>
+		
+	<div th:if="${!buffet.piatti.empty}">Piatti già presenti nel buffet:
+		<ul>
+			<li th:each="piatto: ${buffet.piatti}">
+				<a href="piatto.html" th:href="@{'/piatto' + '/' + ${piatto.id}}"
+				   th:text="${piatto.nome}">Piatto</a>
+			</li>	   	
+		</ul>
+	</div>
+		
+	<div th:if="${!piattiAssenti.empty}">Vuoi aggiungere un piatto al buffet?</div>
+		<ul>
+			<li th:each="piatto: ${piattiAssenti}">
+				<a href="piatto.html" th:href="@{'/piatto' + '/' + ${piatto.id}}" th:text="${piatto.nome}">Piatto</a>
+				<a href="#" th:href="@{'/buffet' + '/' + ${buffet.id} + '/' + ${piatto.id}}">Aggiungi al buffet</a>
+			</li>	   	
+		</ul>
+	</div>
+	
+	<div class="sezione">
+		<a href="buffet.html" th:href="@{'/buffet' + '/' + ${buffet.id}}">CONFERMA</a>
+	</div>
+	
+	<div class="sezione">
+		<a href="/"><strong class="top">Home</strong></a>
+	</div>
+	
+</body>
+
+</html>

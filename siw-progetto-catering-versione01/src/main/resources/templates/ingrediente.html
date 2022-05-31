@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>  	
+		<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dettagli ingrediente</title>
+		<link rel="stylesheet" href="../dettagli.css"/>    
+	</head> 
+	
+	<body>
+	<header> 
+		<div id="titolo"><strong class="titolo">Dettagli ingrediente</strong></div>
+	</header>
+	
+	<div class="sezione">
+		<span ><strong>Nome ingrediente: </strong></span>
+		<span th:text="${ingrediente.nome}">Nome generico</span>
+		<span><strong>  -  Origine ingrediente: </strong></span>
+		<span  th:text="${ingrediente.origine}">Origine generica</span>
+		<span><strong>  -  Descrizione ingrediente: </strong></span>
+		<span  th:text="${ingrediente.descrizione}">Descrizione generica</span>
+   	</div>
+	
+	<div class="sezione">
+		<a href="/"><strong class="top">Home</strong></a>
+	</div>
+	</body>
+</html>

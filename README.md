@@ -1,10 +1,9 @@
 # esame_catering
-prima versione incompleta del compito di esame sui casi d'uso 
+versione completa del compito di esame sui casi d'uso 
 di una società di catering
 
-situazione al 15 maggio 2022
+situazione al 31 maggio 2022
 
-- Il Model, il Repository, I services, I controller sono completi
-- Si verificano errori nella selezione delle form
-- DB non aggiornato
+- L'applicazione è completa ed in fase di test.
 
+Non sono ancora riuscito a sostituire la testata della home di security
